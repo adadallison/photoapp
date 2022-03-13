@@ -1,0 +1,40 @@
+<html>
+<title> Post comments </title>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/MyStyle.css">
+    <script type="text/javascript" src="../js/signup.js">
+    </script>
+</head>
+
+<% include header_loggedin.ejs %>
+
+<body>
+<div class="uploadborder">
+
+    <img class="signin-logo" src="../img/websiteLogo.png" alt="Can't display">
+    <p class="uploadintrotext">Say Something</p>
+    <h6>Be nice!</h6>
+
+
+    <form name="myform" onsubmit= "return validateForm()" method="post" action="">
+        <table class="defaultTable" >
+
+                <textarea class="commentsbox"  name="comments" placeholder="Comment..." rows="2" cols="50"></textarea>
+
+        </table>
+          <input type="hidden" id="postname" name="postname" value="<%=postname%>">
+          <input type="hidden" id="userId" name="userId" value="<%=userId%>">
+
+        <input class="uploadbutton" type = "submit" value="Post" >
+
+
+    </form>
+
+
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

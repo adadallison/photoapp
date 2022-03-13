@@ -1,0 +1,38 @@
+<html lang=en>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta content="en-us" http-equiv="Content-Language" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../css/MyStyle.css">
+
+</head>
+
+<% include header.ejs %>
+
+       <% if (posts.length > 0) {%>
+
+          <div class="img-flex" >
+
+           <% posts.forEach((post, index) => { %>
+
+             <!-- <a href=""  onclick="window.open('/viewcomments?postname=<%= post.POSTNAME %>'); return false;"> -->
+             <a href=""  target="popup" onclick="window.open('/viewcomments?postname=<%= post.POSTNAME %>','popup','width=600,height=600'); return false;">
+             <img class="img-def" src="/img/<%= post.IMAGENAME %>" alt="Image" height="300" width="300" > <br>
+
+             </a>
+               <% }) %>
+
+               <% } else { %>
+                   <p class="nonefound">No posts found, click the icon to go back home!</p>
+               <% } %>
+
+          </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

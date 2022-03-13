@@ -1,0 +1,57 @@
+1) Create a database.
+2) SQL queries for tables creation(USER, POSTS, COMMENTS)
+3) SQL query to add a default user 
+4) SQL query to insert posts, comments
+5) Copy and execute the below commands in MySQL DB.
+ 
+CREATE DATABASE photoapp;
+
+USE photoapp;
+
+CREATE TABLE USER (
+  USERNAME varchar(50) NOT NULL,
+  EMAILID varchar(95) DEFAULT NULL,
+  PASSWORD varchar(45) DEFAULT NULL,
+  TIMESTAMP datetime DEFAULT NULL,
+  PRIMARY KEY (USERNAME),
+  UNIQUE KEY USERNAME_UNIQUE (USERNAME));
+
+ CREATE TABLE POSTS (
+  POSTNAME varchar(50) NOT NULL,
+  USERNAME varchar(45) DEFAULT NULL,
+  TIMESTAMP datetime DEFAULT NULL,
+  IMAGENAME varchar(45) NOT NULL,
+  PRIMARY KEY (POSTNAME),
+  KEY USERNAME_idx (USERNAME),
+  CONSTRAINT USERNAME FOREIGN KEY (USERNAME) REFERENCES user (USERNAME));
+ 
+
+ CREATE TABLE COMMENTS (
+ POSTNAME varchar(30),
+  USERNAME varchar(30),
+ COMMENTS varchar(500),
+ TIMESTAMP DATETIME
+);
+
+INSERT INTO photoapp.USER VALUES('admin','admin@gmail.com','0aA*12345','2019-12-9 03:14:07'); 
+
+
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('foliage','admin','2019-12-9 03:14:07','foliage.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME)  VALUES ('cherry','admin','2019-12-9 03:14:07','cherry.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('xmas','admin','2019-12-9 03:14:07','xmas.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('canyon','admin','2019-12-9 03:14:07','canyon.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('joshua','admin','2019-12-9 03:14:07','joshua.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('greathighway','admin','2019-12-9 03:14:07','greathighway.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('puddle','admin','2019-12-9 03:14:07','puddle.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('recycle','admin','2019-12-9 03:14:07','recycle.jpeg'); 
+INSERT INTO photoapp.POSTS(POSTNAME,USERNAME, TIMESTAMP, IMAGENAME) VALUES ('cactus','admin','2019-12-9 03:14:07','cactus.jpeg'); 
+
+INSERT INTO photoapp.COMMENTS VALUES ('foliage','admin','My foliage','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('cherry','admin','My cherry','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('xmas','admin','My xmas','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('canyon','admin','My food','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('joshua','admin','My joshua','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('greathighway','admin','My greathighway','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('puddle','admin','My house','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('recycle','admin','My recycle','2019-12-9 03:14:07');  
+INSERT INTO photoapp.COMMENTS VALUES ('cactus','admin','My sunset','2019-12-9 03:14:07');  

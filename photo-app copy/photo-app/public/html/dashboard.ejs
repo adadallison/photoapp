@@ -1,0 +1,17 @@
+<% include header_loggedin.ejs %>
+
+   <div class="img-flex" >
+       <% if (posts.length > 0) {%>
+          <table class="table table-hovered">
+            <% posts.forEach((post, index) => { %>
+
+            <!-- <a href="/viewcomments"  onclick="window.open('/viewcomments?postname=<%= post.POSTNAME %>'); return false;"> -->
+            <a href="/viewcomments"  target="popup" onclick="window.open('/viewcomments?postname=<%= post.POSTNAME %>','popup','width=600,height=600'); return false;">
+               <img class="img-def" src="/img/<%= post.IMAGENAME %>" alt="Image" height="300" width="300" > <br>
+               </a>
+                <% }) %>
+              <% } else { %>
+              <p class="text-center">No posts found. Go <a href="/" >here</a> to go back.</p>
+              <% } %>
+</div>
+</html>

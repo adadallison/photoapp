@@ -1,0 +1,49 @@
+<html>
+<title> Upload </title>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/MyStyle.css">
+    <script type="text/javascript" src="postimageJS.js"> </script>
+</head>
+
+<% include header_loggedin_upload.ejs %>
+
+
+<body>
+
+<div class="uploadborder">
+
+    <img class="signin-logo" src="../img/websiteLogo.png" alt="Can't display">
+    <p class="uploadintrotext">Upload Image</p>
+
+<form name="myform" onsubmit= "return validateForm()" action='../fileupload' method='post' encType="multipart/form-data">
+    <table class="uploadtable" >
+
+        <tr>
+            <td><input class="uploadbox" type="text" name="title" placeholder="Title" style="width: 172px"> </td>
+        </tr>
+
+        <tr>
+
+        <td><input class="uploadbox" type="file" name="image" style="width: 264px">&nbsp;&nbsp; </td>
+        </tr>
+
+        <!-- <tr>
+         <td><input class="uploadbox" type="text" name="comments" placeholder="Comments"> </td>
+                </tr> -->
+
+
+        <tr>
+            <td></td>
+            <td><input class="uploadbutton"type ="submit"  name="Post comments" placeholder="Comment" value="Post"> </td>
+        </tr>
+
+    </table>
+    <input type="hidden" id="userId" name="userId" value="<%=userId%>">
+</form>
+
+</div>
+
+</body>
+
+</html>

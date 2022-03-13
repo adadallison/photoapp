@@ -1,0 +1,77 @@
+<html lang=en>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta content="en-us" http-equiv="Content-Language" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Post</title>
+    <link rel="stylesheet" type="text/css" href="../css/MyStyle.css">
+    <script type="text/javascript" src="../js/signup.js">
+    </script>
+</head>
+
+<% include header_comments.ejs %>
+
+
+<div class=" ">
+
+               <% if (posts.length > 0) {%>
+
+
+    <form name="myform" onsubmit= "return validateForm()" method="post" action="../postcomments">
+        <div>
+            <% posts.forEach((post, index) => { %>
+
+                <%   if(index ==0 ) {%>
+
+
+                    <img class="img-com" src="/img/<%= post.IMAGENAME %>" alt="Image" >
+
+
+
+                    <%   if(userId!=null) {%>
+
+                        <div>
+                            <textarea class="commentsbox"  name="comments" placeholder="Any comments?..." rows="2" cols="50"></textarea>
+                            <input  class="combutton" type="submit" name="Post Comments" value="Post" >
+                        </div>
+
+                    <% } %>
+
+
+                <% } %>
+
+                    <div class="container comments ">
+                        <div class="row c">
+                            <div class="col-sm colcom1">
+                                @<%= post.USERNAME %>
+                            </div>
+                            <div class="col-sm  colcom2">
+                                <%= post.COMMENTS %>
+                            </div>
+                            <div class="col-sm time">
+                                <%= post.TIMESTAMP %>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+            <% }) %>
+
+
+        </div>
+        <input type="hidden" id="postname" name="postname" value="<%=postname%>">
+            <input type="hidden" id="userId" name="userId" value="<%=userId%>">
+
+        <% } else { %>
+
+            <p class="clickhere"> Click <a href="/postcomments?userId=<%=userId%>&postname=<%=postname%>" > here</a> to be the first to add comments!</p>
+
+        <% } %>
+    </form>
+</div>
+</div>
+</body>
+</html

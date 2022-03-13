@@ -1,0 +1,29 @@
+<% include header_loggedin.ejs %>
+ <div class="table-wrapper">
+        <% if (posts.length > 0) {%>
+
+
+
+                <br>
+                 <div class="img-flex" >
+                    <% posts.forEach((post, index) => { %>
+
+            <!-- <a href="../html/viewcomments.ejs"  onclick="window.open('/viewcomments?postname=<%= post.POSTNAME %>'); return false;"> -->
+             <a href="../html/viewcomments.ejs"  target="popup" onclick="window.open('/viewcomments?postname=<%= post.POSTNAME %>','popup','width=600,height=600'); return false;">
+
+
+                        <img class="img-def" src="/img/<%= post.IMAGENAME %>" alt="Image" height="300" width="300" > <br>
+
+                        </a>
+
+                    <% }) %>
+
+
+        <% } else { %>
+            <p class="text-center">No posts found. Go <a href="/" >here</a> to add posts.</p>
+        <% } %>
+    </div>
+
+</div>
+</body>
+</html>
