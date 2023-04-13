@@ -11,7 +11,7 @@ Please follow the instructions below and fill in the information requested when 
 |               | Name          | Email         |
 |:-------------:|:-------------:|:-------------:|
 | Team Member 1 | Swetha        |
-| Team Member 2 | Allison Adad  | aadad@mail.sfsu.edu      |
+| Team Member 2 | Allison Adad  |               |
 
 ## Changing Repository Name
 
